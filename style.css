@@ -1,0 +1,504 @@
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+
+/*
+
+Innehållsförteckning
+
+1. Generella settings
+2. Body
+3. Navbar
+4. Hero section
+5. Usp section
+6. Picture/Menu section
+7. Footer
+
+
+*/
+
+
+/* 1. Generella settings */
+*{
+    font-family: Staatliches;
+    font-weight: 100;
+    color: var(--three);
+
+    /*Färgdeklaration*/
+    --one: #535F4A;
+    --two: #e6845e;
+    --three: #383838;
+    --four: #D9D9D9;
+    --five: #ffffff;
+    --six: #B8C5B1;
+
+    box-sizing: border-box;
+}
+
+
+/* 2. Body */
+
+body {
+    background-color: var(--six);
+    background-image: url(img/bakgrund-avocado.jpg);
+    margin: 0;
+    padding: 0;
+}
+
+/* 3. Navbar */
+
+#navbar {
+    display: flex;
+    align-items: center;
+    background-color: #535F4A98;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+#navbar img {
+    width: 3rem;
+    height: 2.5rem;
+    margin: 1rem;
+}
+
+#space {
+    flex-grow: 1;
+}
+
+#navbar ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+}
+
+#navbar ul li {
+    display: inline;
+    margin-right: 2.5rem;
+}
+
+#navbar ul li a {
+    text-decoration: none;
+    color: var(--five);
+}
+
+#navbar ul li:hover {
+    font-size: 110%;
+}
+
+#burger-menu {
+    width: 2rem;
+    height: 2rem;
+    margin: 1.3rem;
+}
+
+.line {
+    width: 100%;
+    height: 4px;
+    background-color: var(--five);
+    margin: .3rem 0;
+    border-radius: 5px;
+}
+
+#dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+#dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #64785b70;
+    width: 40vw;
+    margin-top: .1rem;
+    border-radius: 0px 4px;
+    z-index: 1;
+}
+
+#dropdown-content a {
+    color: var(--three);
+    padding: 1rem 1rem;
+    text-decoration: none;
+    display: block;
+}
+
+#dropdown-content a:hover {
+    background-color: var(--four);
+}
+
+#dropdown:hover #dropdown-content {
+    display: block;
+}
+
+@media screen and (min-width: 500px) {
+    #burger-menu {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #navbar ul {
+        display: none;
+    }
+}
+
+/* 4. Hero section */
+
+#hero-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100vw;
+    height: 120vh;
+    margin: 0;
+    background-image: url(img/hero.jpg);
+    background-size: cover;
+    background-position: 50% 95%;
+}
+
+#hero-content {
+    margin-top: 4rem;
+    text-align: center;
+}
+
+#hero-content p {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+#hero-content h1 {
+    font-size: 8rem;
+    -webkit-text-stroke: var(--five);
+    -webkit-text-stroke-width: 2px;
+    color: var(--two);
+    margin: 0 0 1rem;
+}
+
+#hero-btn {
+    padding: 1rem 3rem;
+    font-size: 1.5rem;
+    text-decoration: none;
+    background-color: var(--four);
+    border-style: none;
+    border-radius: 6px;
+}
+
+#hero-btn:hover {
+    background-color: var(--six);
+}
+
+@media screen and (max-width: 500px) {
+    #hero-section {
+        height: 100vh;
+        background-position: 75% 0%;
+    }
+
+    #hero-content {
+        text-align: left;
+        margin: 4rem 1rem;
+    }
+
+    #hero-content p {
+        margin-top: 12rem;
+        margin-left: 1rem;
+        font-size: 1.3rem;
+    }
+
+    #hero-content h1 {
+        font-size: 5rem;
+        -webkit-text-stroke-width: 2px;
+    }
+
+    #hero-btn {
+        margin-left: 1rem;
+        height: 2.5rem;
+        width: 7.5rem;
+        font-size: 1.3rem;
+    }
+}
+
+/* ------- Validerad 15/9 ------- */
+
+/* 5. Usp section */
+
+#usp {
+    background-color: #ffffff80;
+    margin: 4rem 10%;
+    padding: 3rem 5%;
+    text-align: center;
+}
+
+#usp h2 {
+    display: inline;
+    font-size: 2.5rem;
+}
+
+#usp h3 {
+    display: inline;
+}
+
+#usp p {
+    font-size: 1.1rem;
+    letter-spacing: .5px;
+}
+
+@media screen and (max-width: 730px) {
+    #usp h3 {
+        display: block;
+        margin: 0;
+    }
+
+    #usp p {
+        font-size: 1rem;
+        text-align: left;
+        margin-top: 5vh;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #usp {
+        margin: 10% 5%;
+    }
+}
+
+/* 6. Picture/Menu section */
+
+#picture-menu-picture {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+
+#pic1 {
+    height: auto;
+    width: 100%;
+    grid-column: 1;
+    grid-row: 1;
+}
+
+#menu {
+    height: auto;
+    width: 100%;
+    background-color: #ffffff80;
+    grid-column: 2;
+    grid-row: 1;
+    padding: 1.5vw;
+}
+
+#menu h4 {
+    font-size: 3vw;
+    text-align: center;
+    margin: 0;
+}
+
+#menu p {
+    font-size: 1vw;
+    display: grid;
+    grid-template-columns: 80% 1fr;
+    margin: 0;
+}
+
+.food-title {
+    font-size: 1.5vw;
+    grid-column: 1;
+    margin: 2vh 0vw 0vw;
+}
+
+.price {
+    font-size: 1.5vw;
+    grid-column: 2;
+    margin: 2vh 0vw 0vw;
+    text-align: right;
+}
+
+#pic2 {
+    height: auto;
+    width: 100%;
+    grid-column: 3;
+    grid-row: 1;
+}
+
+#boka-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-column: 1;
+    grid-row: 1;
+}
+
+#boka {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 20%;
+    width: 50%;
+    background-color: #e6845e99;
+    border-radius: 6px;
+}
+
+#boka h4 {
+    font-size: 1.6vw;
+}
+
+#boka p {
+    font-size: 1vw;
+}
+
+.boka-content {
+    color: var(--five);
+    text-align: center;
+    margin: 0;
+    letter-spacing: .1vw;
+}
+
+@media screen and (max-width: 1100px) {
+
+    #picture-menu-picture {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    #pic1 {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    #boka h4 {
+        font-size: 2.6vw;
+    }
+
+    #boka p {
+        font-size: 1.6vw;
+    }
+
+    #menu {
+        height: auto;
+        width: 150%;
+        grid-column: 1;
+        grid-row: 2;
+        margin: 4rem 25% 0vh;
+        padding: 2rem;
+    }
+
+    #menu p {
+        font-size: 1.5vw;
+    }
+
+    .food-title, .price {
+        font-size: 2vw;
+    }
+
+    #pic2 {
+        grid-column: 2;
+        grid-row: 1;
+    }
+}
+
+@media screen and (max-width: 720px) {
+
+    #picture-menu-picture {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+
+    #pic1 {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    #boka h4 {
+        font-size: 6.6vw;
+    }
+
+    #boka p {
+        font-size: 4vw;
+    }
+
+    #menu {
+        height: auto;
+        width: 80%;
+        grid-column: 1;
+        grid-row: 2;
+        margin: 0rem 10% 2rem;
+        padding: 2rem;
+    }
+
+    #menu h4 {
+        font-size: 6.6vw;
+    }
+
+    #menu p {
+        font-size: 3vw;
+    }
+
+    .food-title, .price {
+        font-size: 4vw;
+    }
+
+    #pic2 {
+        grid-column: 1;
+        grid-row: 3;
+    }
+}
+
+/* 7. Footer */
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #B4694299;
+    margin-top: 8rem;
+    padding: 2rem;
+}
+
+footer #icon {
+    width: 45px;
+    height: 60px;
+    margin-right: 20px;
+}
+
+footer #adress {
+    width: 160px;
+}
+
+footer #logo {
+    width: 3rem;
+    height: 2.5rem;
+    margin: 0px 40px;
+}
+
+footer #time {
+    width: 255px;
+}
+
+.footer-div h4 {
+    color: var(--five);
+    font-size: 30px;
+    margin: 0;
+}
+
+.footer-div p {
+    color: var(--five);
+    margin: 0px 0px 4px;
+}
+
+@media screen and (max-width: 500px) {
+    footer {
+        flex-direction: column;
+        text-align: center;
+        margin: 0;
+    }
+
+    footer #icon {
+        margin: .5rem;
+    }
+
+    footer #logo {
+        margin: 2rem;
+    }
+}
+
+/* ------- Validerad 25/9 ------- */
